@@ -1,0 +1,24 @@
+<h1>My Tasks</h1>
+<div class="container">
+  <% @tasks.each do |task| %>
+    <div class="card">
+      <h2><%= link_to task.title, task_path(task) %></h2>
+      <%= link_to "Delete", task_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+<%= link_to (tasks_new_path) do %>
+      <div class="btn">
+        Add Task
+      </div>
+    <% end %>
+
+
+
